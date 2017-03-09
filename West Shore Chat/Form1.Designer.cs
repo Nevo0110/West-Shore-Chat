@@ -85,6 +85,7 @@
             this.send.TabIndex = 4;
             this.send.Text = "Send";
             this.send.UseVisualStyleBackColor = true;
+            this.send.Click += new System.EventHandler(this.send_Click);
             // 
             // mainForm
             // 

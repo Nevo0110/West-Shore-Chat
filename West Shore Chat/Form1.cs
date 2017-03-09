@@ -18,7 +18,17 @@ namespace West_Shore_Chat
         }
         public void sendMessage()
         {
+            string userName = Environment.UserName;
 
+            mainText.AppendText(">>: " + userName + ": " + messageText.Text + "\n");
+
+            messageText.Clear();
+
+        }
+
+        private void send_Click(object sender, EventArgs e)
+        {
+            sendMessage();
         }
     }
 }
