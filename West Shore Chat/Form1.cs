@@ -29,17 +29,13 @@ namespace West_Shore_Chat
 
         private void saveLog()
         {
-            DateTime DT = DateTime.Now;
+            DateTime currentTime = DateTime.Now;
 
-            string test = "Hey there beter " + Convert.ToString(DT) + ".txt";
-            MessageBox.Show(test);
-            /*DateTime currentTime = DateTime.Now;
-
-            FileStream fs = new FileStream(@"HelpDeskLog " + Convert.ToString(currentTime) + ".txt", FileMode.CreateNew, FileAccess.Write);
+            FileStream fs = new FileStream(@"HelpDeskLog " + currentTime.ToString("MM-dd-yy(hh;mm;ss)") + ".txt", FileMode.CreateNew, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
 
-            sw.WriteLine(mainText);
-            sw.Close(); */
+            sw.Write(mainText);
+            sw.Close();
         }
 
         private void send_Click(object sender, EventArgs e)
@@ -55,7 +51,7 @@ namespace West_Shore_Chat
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void log_Click(object sender, EventArgs e)
         {
             saveLog();
         }
